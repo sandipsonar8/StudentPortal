@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model StudentPortal.Web.Models.AddStudentViewModel
+<style>
+    .round{
+        
+        border-radius: 10px;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<form class="" method="post">
+    <div class="card container-fluid card-text round" style="width: 25rem;">
+        <h1 class="card-header">Add Student</h1>
+
+        <div class="card-body">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" asp-for="Name" />
+        </div>
+
+        <div class="card-body">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" asp-for="Email" />
+        </div>
+
+        <div class="card-body">
+            <label class="form-label">Phone No.</label>
+            <input type="text" class="form-control" asp-for="Phone" />
+        </div>
+
+        <div class="card-body">
+            <input type="checkbox" class="form-check-input" id="Subscribed" asp-for="Subscribed" />
+            <label class="form-check-label" for="Subscribed">Subscribed</label>
+        </div>
+
+        <div class="card-footer center">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>

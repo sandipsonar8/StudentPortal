@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model StudentPortal.Web.Models.Entities.Student
+
+<style>
+    .round {
+        border-radius: 10px;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+@if (Model is null)
+{
+    <p>No student was found with this id</p>
+}
+else
+{
+
+    <form method="post">
+        <div class="card container round " style="width: 25rem;">
+            <h1 class="card-header">Edit Student</h1>
+
+            <div class="card-body">
+                <label class="form-label">Id</label>
+                <input type="text" class="form-control" asp-for="Id" />
+            </div>
+
+            <div class="card-body">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" asp-for="Name" />
+            </div>
+
+            <div class="card-body">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" asp-for="Email" />
+            </div>
+
+            <div class="card-body">
+                <label class="form-label">Phone No.</label>
+                <input type="text" class="form-control" asp-for="Phone" />
+            </div>
+
+            <div class="card-body">
+                <input type="checkbox" class="form-check-input" id="Subscribed" asp-for="Subscribed" />
+                <label class="form-check-label" for="Subscribed">Subscribed</label>
+            </div>
+
+            <div class="card-footer align-content-center center">
+                <button type="submit" class="align-items-center btn btn-primary">Save</button>
+
+                <button type="submit" class="ms-3 btn btn-danger" asp-controller="Students" asp-action="Delete">Delete</button>
+            </div>
+
+        </div>
+    </form>
+
+}
